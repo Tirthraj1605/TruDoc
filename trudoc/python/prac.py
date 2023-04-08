@@ -6,12 +6,11 @@ from sklearn.feature_extraction.text import CountVectorizer
 
 data = pd.read_csv('dataset.csv')
 
-def recommend_rest(str):
+def recommend_Diseases(str):
     
     df=pd.read_csv('dataset.csv')
-
-    for i in range(len(df['s'])):
-        if str == list(df['s'])[i]:
+    for i in range(len(df['symp'])):
+        if str == list(df['symp'])[i]:
             id = i
 
     cv=CountVectorizer(max_features=110)
@@ -21,56 +20,18 @@ def recommend_rest(str):
     listt = sorted(list(enumerate(similarity[id])),reverse=True,key=lambda x:x[1])
     for i in range(len(listt)):
         listt[i] = list(listt[i])
+    sorted_new_listt = sorted(list(enumerate(listt)), key=lambda x:x[1],reverse=True)[0:6]
 
-    new_listt = []
-
-    # temp = listt[5]
-    # if temp[1] < 0.9:
-    #     new_listt.append(temp)
-    # else:
-    #     for i in range(len(listt)):
-    #         temp = listt[i]
-    #         if temp[1] > 0.9:
-    #             new_listt.append(temp)
-
-    # for i in range(len(new_listt)):
-    #     temp = new_listt[i]
-    #     temp[1] = float(temp[1]) * get_weight(temp[0], df)
-
-    sorted_new_listt = sorted(new_listt, key=lambda x:x[1],reverse=True)[0:6]
-
-    recommended_restaurants=[]
+    recommended_Diseases=[]
     for lists in sorted_new_listt:
         id = lists[0]
-        recommended_restaurants.append([list(df['s'])[id]])
+        recommended_Diseases.append([list(df['s'])[id]])
 
-    return recommended_restaurants
+    return recommended_Diseases
 
-# def get_location(df):
-#     fig = px.density_mapbox(df, lat="Latitude", lon="Longitude", z="AverageCost",hover_name="Area",color_continuous_scale='Turbo', mapbox_style="stamen-terrain",opacity=0.5,height=900,width=900)
-#     fig.update_layout(mapbox_style="open-street-map", mapbox_zoom=11, mapbox_center_lat = 12.9716, mapbox_center_lon = 77.5946)
-#     # fig.show(width=9000, height=9000)
-#     return fig
-
-# def recommend_loc(str):
-#     same_loc = []
-#     for i in range(len(list(df['Area']))):
-#         if str == list(df['Area'])[i]:
-#             same_loc.append(i)
-#     for i in range(len(same_loc)):
-#         id = same_loc[i]
-#         same_loc[i] = [ id, list(df['weighted_dine'])[id] + list(df['weighted_deli'])[id] ]
-#     sorted_list = sorted(same_loc,key=lambda x:x[1],reverse=True)[0:6]
-#     recommended_restaurants=[]
-#     for lists in sorted_list:
-#         id = lists[0]
-#         recommended_restaurants.append(list(df['Name'])[id])
-#     return recommended_restaurants
     
 df = pd.read_csv('dataset.csv')
 df = df.set_index('ID')
-
-#fig = get_location(df)
 
 symp_list = ['itching', 'skin_rash', 'nodal_skin_eruptions', 'dischromic _patches',			
  'continuous_sneezing', 'shivering', 'chills', 'watering_from_eyes',		
@@ -119,8 +80,9 @@ symp_list = ['itching', 'skin_rash', 'nodal_skin_eruptions', 'dischromic _patche
  'muscle_wasting',' patches_in_throat',' high_fever',' extra_marital_contacts',			
  'weight_loss',' restlessness',' lethargy',' irregular_sugar_level',' blurred_and_distorted_vision',' obesity',' excessive_hunger',' increased_appetite',' polyuria',		
  'sunken_eyes',' dehydration',' diarrhoea']
-# area_list = list(df['Area'].unique())
+
 symp_list = list(df['symp'].unique())
+
 
 # Define custom CSS
 button_style = """
@@ -137,23 +99,23 @@ st.markdown(button_style, unsafe_allow_html=True)
 
 
 #create a button in a sidebar
-st.sidebar.title('Please Select a type of Recommendation')
+st.sidebar.title('Please Click After Choosing the Symp')
 st.sidebar.write('symp options given')
-old_cuisine = symp_list[0]
-cuisine = st.selectbox('Select a symp-1', symp_list)
-rest = st.selectbox('Select a symp-2', symp_list)
-print(rest)
-# print(change ) everytime a new item selected form selectbox
+# old_symp = symp_list[0]
+symp = st.selectbox('Select a symp-1',symp_list)
+symp2 = st.selectbox('Select a symp-2',symp_list)
+print(symp)
+print(symp2)
 
 
 if st.sidebar.button('Diseases-Name'):
     st.sidebar.write('Ask symp')
-    output = recommend_rest(rest)
+    output = recommend_Diseases(symp)
     st.write(output)
-    tab1,tab2,tab3,tab4,tab5,tab6 = st.tabs(output)
+    #tab1,tab2,tab3,tab4,tab5,tab6 = st.tabs(output)
 
-    for o in output:
-        st.markdown(f"[{o[0]}]({o[1]})")
-        st.markdown("------------")
-        for element in o:
-            st.markdown("- "+o)
+    # for o in output:
+    #     st.markdown(f"[{o[0]}]({o[1]})")
+    #     st.markdown("------------")
+    #     for element in o:
+    #         st.markdown("- "+o)
