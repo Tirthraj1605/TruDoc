@@ -11,7 +11,7 @@ export default function Home() {
 
             <div className="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded bg-blue-500 hover:bg-teal-600 mr-2"><button onClick={() => { window.scrollTo({ top: 0, behavior: "smooth" }) }}>Home</button></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <div className="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded bg-blue-500 hover:bg-teal-600 mr-2"><button onClick={() => { window.scrollTo({ top: 1010, behavior: "smooth" }) }}>True Prescription</button></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <div className="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded bg-blue-500 hover:bg-teal-600 mr-2"><button onClick={() => { window.scrollTo({ top: 1100, behavior: "smooth" }) }}>About</button></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            {/* <div className="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded bg-blue-500 hover:bg-teal-600 mr-2"><button onClick={() => { window.scrollTo({ top: 1100, behavior: "smooth" }) }}>About</button></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */}
             <div className="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded bg-blue-500 hover:bg-teal-600 mr-2"><button onClick={() => { window.scrollTo({ top: 5000, behavior: "smooth" }) }}>Contact</button></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           </div>
 
@@ -90,7 +90,7 @@ export default function Home() {
               </label><br /><br /><br />
 
             </form><br></br>
-            <div className="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded bg-blue-500 hover:bg-teal-600 mr-2"><button onClick={() => { window.scrollTo({ top: 2020, behavior: "smooth" }) }}>NEXT</button></div><br /><br /><br />
+            <div className="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded bg-blue-500 hover:bg-teal-600 mr-2"><button onClick={() => { window.scrollTo({ top: 1800, behavior: "smooth" }) }}>NEXT</button></div><br /><br /><br />
             <br></br><br></br></div>
           </div>
           <div className="bg-blue-100">
