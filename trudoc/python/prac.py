@@ -1,5 +1,4 @@
 import streamlit as st
-import plotly.express as px
 import pandas as pd
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import CountVectorizer
@@ -100,16 +99,16 @@ st.markdown(button_style, unsafe_allow_html=True)
 
 #create a button in a sidebar
 st.sidebar.title('Please Click After Choosing the Symp')
-st.sidebar.write('symp options given')
+st.sidebar.write('Click here to find out!')
 # old_symp = symp_list[0]
-symp = st.selectbox('Select a symp-1',symp_list)
-symp2 = st.selectbox('Select a symp-2',symp_list)
+symp = st.selectbox('Select symptom-1',symp_list)
+symp2 = st.selectbox('Select symptom-2',symp_list)
 print(symp)
 print(symp2)
 
 
-if st.sidebar.button('Diseases-Name'):
-    st.sidebar.write('Ask symp')
+if st.sidebar.button('Click Here'):
+    # st.sidebar.write('Ask symp')
     output = recommend_Diseases(symp)
     st.write(output)
     #tab1,tab2,tab3,tab4,tab5,tab6 = st.tabs(output)
