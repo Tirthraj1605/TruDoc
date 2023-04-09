@@ -145,7 +145,7 @@ export default function Home() {
               <input type="range" min="0" max="10"></input>
             </label>
             <br></br><br></br>
-            <input type="Submit" value="Submit" className="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded bg-blue-500 hover:bg-teal-600 mr-2"></input>
+            <a href="http://localhost:8501/"><input type="Submit" value="Submit" className="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded bg-blue-500 hover:bg-teal-600 mr-2"></input></a>
             <br></br><br></br>
             <input type="reset" value="Reset" className="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded bg-red-500 hover:bg-teal-600 mr-2"></input>
           </form>
