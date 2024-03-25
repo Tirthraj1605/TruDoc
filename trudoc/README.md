@@ -10,7 +10,7 @@ cd TruDoc
 npm i
 <h6>Run the server:</h6>
 npm start<br/>
-<p>Open your web browser by tapping the link http://localhost to view the website.</p>
+
 <h3>Streamlit</h3>
 <h6>Navigate to the project directory:</h6>
 cd TruDoc/python
